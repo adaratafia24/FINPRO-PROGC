@@ -1,0 +1,5 @@
+# Mengabaikan file .DS_Store dari macOS
+.DS_Store
+
+# Mengabaikan .DS_Store di dalam semua sub-folder
+**/.DS_Store
