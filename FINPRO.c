@@ -4,7 +4,7 @@
 void checkBMI(float bmi, char* kategori, char* risiko) {
     if (bmi < 18.5) {
         strcpy(kategori, "kekurangan berat badan atau underweight");
-        strcpy(risiko, "Rendah tapi dapat beresiko terkena osteoporosis dan malnutrisi)");
+        strcpy(risiko, "Rendah tapi dapat beresiko terkena osteoporosis dan malnutrisi");
     } else if (bmi >= 18.5 && bmi < 23.0) {
         strcpy(kategori, "normal atau ideal");
         strcpy(risiko, "Sangat Rendah / Optimal");
