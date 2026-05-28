@@ -1,22 +1,27 @@
 #include <stdio.h>
 #include <string.h>
 
-void checkBMI(float bmi, char* kategori, char* risiko) {
+void checkBMI(float bmi, char* kategori, char* risiko, char* keterangan) {
     if (bmi < 18.5) {
-        strcpy(kategori, "kekurangan berat badan atau underweight");
-        strcpy(risiko, "Rendah tapi dapat beresiko terkena osteoporosis dan malnutrisi");
+        strcpy(kategori, "Underweight");
+        strcpy(risiko, "Rendah");
+        strcpy(keterangan, "Berisiko terkena osteoporosis dan malnutrisi");
     } else if (bmi >= 18.5 && bmi < 23.0) {
-        strcpy(kategori, "normal atau ideal");
-        strcpy(risiko, "Sangat Rendah / Optimal");
+        strcpy(kategori, "Normal");
+        strcpy(risiko, "Sangat Rendah");
+        strcpy(keterangan, "Bagus. Tolong pertahankan ya");
     } else if (bmi >= 23.0 && bmi < 25.0) {
-        strcpy(kategori, "Kelebihan Berat Badan (Overweight / Berpotensi Obesitas)");
-        strcpy(risiko, "dapat terkena diabetes tipe 2 dan hipertensi)");
+        strcpy(kategori, "Overweight");
+        strcpy(risiko, "Sedang");
+        strcpy(keterangan, "Berisiko terkena diabetes tipe 2 dan hipertensi");
     } else if (bmi >= 25.0 && bmi < 30.0) {
-        strcpy(kategori, "Obesitas tingkat 1");
-        strcpy(risiko, "tinggi yang dapat menyebabkan terkena penyakit kardiovaskular yang meningkat secara signifikan)");
+        strcpy(kategori, "Obesitas Tingkat 1");
+        strcpy(risiko, "Tinggi");
+        strcpy(keterangan, "Berisiko terkena penyakit kardiovaskular yang meningkat secara signifikan");
     } else {
-        strcpy(kategori, "Obesitas tingkat 2");
-        strcpy(risiko, "Sangat tinggi sangat dibutuhkan penanganan medis segera)");
+        strcpy(kategori, "Obesitas Tingkat 2");
+        strcpy(risiko, "Sangat Tinggi");
+        strcpy(keterangan, "Sangat dibutuhkan penanganan medis segera");
     }
 }
 
@@ -53,7 +58,7 @@ int main() {
     int usia;
     char gender;
     float berat, tinggi, tinggiMeter, bmi;
-    char kategori[100], risiko[100];
+    char kategori[100], risiko[100], keterangan[100];
 
     printf("==================================================\n");
     printf("        BMI & HEALTH RISK ANALYZER SYSTEM         \n");
@@ -78,7 +83,7 @@ int main() {
     tinggiMeter = tinggi / 100.0;
     bmi = berat / (tinggiMeter * tinggiMeter);
     
-    checkBMI(bmi, kategori, risiko);
+    checkBMI(bmi, kategori, risiko, keterangan);
     
     printf("\n==================================================\n");
     printf("                 HASIL SKRINING                   \n");
@@ -88,6 +93,7 @@ int main() {
     printf("Skor BMI       : %.2f kg/m^2\n", bmi);
     printf("Kategori BMI   : %s\n", kategori);
     printf("Risiko Penyakit: %s\n", risiko);
+    printf("Keterangan     : %s\n", keterangan);
     
     analyzeDemographicRisk(usia, (gender == 'L' || gender == 'l') ? 'L' : 'P', bmi);
     
