@@ -30,7 +30,7 @@ void analyzeDemographicRisk(int usia, char gender, float bmi) {
     printf("   ANALISIS RISIKO KESEHATAN TAMBAHAN (DEMOGRAFIS)  \n");
     printf("==================================================\n");
 
-    printf("* faktor Usia (%d tahun): ", usia);
+    printf("* Faktor Usia (%d tahun): ", usia);
     if (usia >= 45 && gender == 'L') {
         printf("Risiko penyakit jantung koroner meningkat secara alami pada pria di atas 45 tahun.\n");
     } else if (usia >= 55 && gender == 'P') {
